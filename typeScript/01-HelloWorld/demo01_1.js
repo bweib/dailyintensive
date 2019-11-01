@@ -28,9 +28,31 @@ var an = 666;
 an = 'ni';
 console.log(an, 'any');
 //函数
-function searchxiaojiejie(age) {
-    return '找个' + age + '岁的小姐姐';
+function searchxiaojiejie(age, stature) {
+    if (age === void 0) { age = 18; }
+    if (stature === void 0) { stature = '36D'; }
+    var yy = '';
+    if (stature != undefined) {
+        yy = stature;
+    }
+    return '找个' + yy + age + '岁的小姐姐';
 }
-var xiaojieage = 18;
-var result = searchxiaojiejie(xiaojieage);
+var xiaojieage = 16;
+var result = searchxiaojiejie(xiaojieage, '苗条的');
 console.log(result);
+function searchxiaojiejie1() {
+    var xuqiu = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        xuqiu[_i] = arguments[_i];
+    }
+    var yy = '';
+    for (var i = 0; i < xuqiu.length; i++) {
+        yy = yy + xuqiu[i];
+        if (i < xuqiu.length) {
+            yy = yy + '、';
+        }
+    }
+    return '找个' + yy + '的小姐姐';
+}
+var result1 = searchxiaojiejie1('屁股大', '苗条', '年轻');
+console.log(result1);
